@@ -6,7 +6,7 @@ The data collected for this project originates from an educational initiative fo
 
 ### Table of Contents for the Educational Insights System Project
 
-1. Data Cleaning and Transformation in Google Colab
+1. [Data Cleaning and Transformation in Google Colab](EducationProgramInsight.ipynb)
 
 This step involves using Python in Google Colab to clean, preprocess, and explore the dataset. Tasks include  normalizing formats and calculating relevant metrics such as student ages and attendance summaries.
 
