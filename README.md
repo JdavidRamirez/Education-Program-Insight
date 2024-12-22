@@ -10,4 +10,4 @@ The data collected for this project originates from an educational initiative fo
 
 This step involves using Python in Google Colab to clean, preprocess, and explore the dataset. Tasks include  normalizing formats and calculating relevant metrics such as student ages and attendance summaries.
 
-[EducationProgramInsight.ipynb]
+[Link to the file](EducationProgramInsight.ipynb)
