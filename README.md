@@ -4,10 +4,36 @@
 
 The data collected for this project originates from an educational initiative focused on workshops about coding and new technologies conducted in various schools. The program required student participants to complete a project throughout four sessions.
 
-### Table of Contents for the Educational Insights System Project
+### Table of Contents :
 
-1. [Data Cleaning and Transformation in Google Colab](EducationProgramInsight.ipynb)
+1. [Data Cleaning and Transformation](#data-cleaning-and-transformation)
+2. Insert data from Google Collab into SQL Server Management.
+3. Data visualization Poer BI.
+4. Data insights.
 
-This step involves using Python in Google Colab to clean, preprocess, and explore the dataset. Tasks include  normalizing formats and calculating relevant metrics such as student ages and attendance summaries.
+## Data Cleaning and Transformation
 
+  This step involves using Python in Google Colab to clean, preprocess, and explore the dataset. Tasks include  normalizing formats and calculating 
+  relevant metrics such as student ages and attendance summaries.
+
+```python
+
+##Import libraries
+import pandas as pd
+import numpy as np
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
+```
+
+```python
+
+#Import CSV files from URLs into two separate DataFrames (bd1 and bd2).
+
+bd1=pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vS9IwGj-SwAzPqx6_gNwxigmdziGS0Cgu7-UQqaRp5lyUOs41pkbirF8vIgQxlbsmFMr1nimwC_sHbQ/pub?gid=260434784&single=true&output=csv')
+bd2=pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSbbYrc301ntoQC-3hdbLjR9UtcBCVpm3fnJrCJSEtQw5-M6bevEnCiCK8L_iWpZLKfklnbHtrXFvR9/pub?gid=0&single=true&output=csv')
+
+```
 [Link to the file](EducationProgramInsight.ipynb)
