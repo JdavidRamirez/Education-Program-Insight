@@ -13,20 +13,21 @@ The data collected for this project originates from an educational initiative fo
 
 ## Data Cleaning and Transformation
 
-  This step involves using Python in Google Colab to clean, preprocess, and explore the dataset. Tasks include  normalizing formats and calculating 
-  relevant metrics such as student ages and attendance summaries.
+  This step involves using Python in Google Colab to clean, preprocess, and explore the dataset. Tasks 
+  include  normalizing formats and calculating relevant metrics such as student ages and attendance 
+  summaries. [Link to the file](EducationProgramInsight.ipynb)
 
 ```python
 
-##Import libraries
+#Import libraries
 import pandas as pd
 import numpy as np
-from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
 ```
+**Note:** Schools shared the student information contained in these files and includes personal student data. This project will only utilize the information strictly necessary for its intended purposes.
 
 ```python
 
@@ -36,4 +37,13 @@ bd1=pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vS9IwGj-SwAzPqx
 bd2=pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSbbYrc301ntoQC-3hdbLjR9UtcBCVpm3fnJrCJSEtQw5-M6bevEnCiCK8L_iWpZLKfklnbHtrXFvR9/pub?gid=0&single=true&output=csv')
 
 ```
-[Link to the file](EducationProgramInsight.ipynb)
+Data keep:
+* Fecha evento: Date of students workshop attendance. Type(Date)
+
+
+```python
+
+#Keep only the necessary columns related to event dates, student information, and attendance.
+bd1=bd1[['Fecha evento','N° de Documento','Genero','Fecha de Nacimiento','Grado','Asistencia']].copy()
+bd2=bd2[['Fecha evento','N° de Documento','Genero','Fecha de Nacimiento','Grado','Asistencia']].copy()
+```
