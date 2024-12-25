@@ -37,8 +37,13 @@ bd1=pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vS9IwGj-SwAzPqx
 bd2=pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSbbYrc301ntoQC-3hdbLjR9UtcBCVpm3fnJrCJSEtQw5-M6bevEnCiCK8L_iWpZLKfklnbHtrXFvR9/pub?gid=0&single=true&output=csv')
 
 ```
-Data keep:
-* Fecha evento: Date of students workshop attendance. Type(Date)
+Data kept:
+* `Fecha evento:` Date of students workshop attendance. Type(Date)
+* `N° De Documento:`  Type(INT)
+* `Genero:`  Type(Date)
+* `Fecha de Nacimiento:` Type(Date)
+* `Grado:`  Type(Date)
+* `Asistencia` Type(Date)
 
 
 ```python
