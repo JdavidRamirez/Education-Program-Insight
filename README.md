@@ -39,11 +39,11 @@ bd2=pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSbbYrc301ntoQC
 ```
 Data kept:
 * `Fecha evento:` Date of students workshop attendance. Type(Date)
-* `N° De Documento:`  Type(INT)
-* `Genero:`  Type(Date)
-* `Fecha de Nacimiento:` Type(Date)
-* `Grado:`  Type(Date)
-* `Asistencia` Type(Date)
+* `N° De Documento:`Unique identification number assigned to each student. Type(INT)
+* `Genero:`The student's gender (e.g., Male, Female). Type(Object)
+* `Fecha de Nacimiento:`The date of birth of the student. Type(Date)
+* `Grado:`The academic grade or year of the student (e.g., 8th grade, 9th grade) Type(OBJECT)
+* `Asistencia:` Indicates whether the student attended the workshop (e.g., Yes/No). Type(OBJECT)
 
 
 ```python
