@@ -52,3 +52,48 @@ Data kept:
 bd1=bd1[['Fecha evento','N° de Documento','Genero','Fecha de Nacimiento','Grado','Asistencia']].copy()
 bd2=bd2[['Fecha evento','N° de Documento','Genero','Fecha de Nacimiento','Grado','Asistencia']].copy()
 ```
+```python
+#Merge the two DataFrames into one (df) for further analysis.
+df=pd.concat([bd1,bd2], ignore_index=True)
+
+#Convert string-based date columns into DateTime objects for easier manipulation.
+df['Fecha evento']=pd.to_datetime(df['Fecha evento'])
+df['Fecha de Nacimiento']=pd.to_datetime(df['Fecha de Nacimiento'],format="mixed")
+
+#Calculate students' ages in years and months as of the current date and store the results in a new column, Edad.
+from datetime import datetime
+
+# Function to calculate the age in years and months
+def calculate_age(birthdate):
+    today = datetime.today()
+    years = today.year - birthdate.year
+    months = today.month - birthdate.month
+
+    # Adjust if the birthdate's month hasn't occurred yet this year
+    if months < 0:
+        years -= 1
+        months += 12
+
+    # Calculate age in years and months as a decimal (e.g., 15.6)
+    return years + months / 12
+
+# Apply the function to the 'birth_date' column
+df['Edad'] = df['Fecha de Nacimiento'].apply(calculate_age)
+
+#Convert categorical data (Asistencia and Genero) into numerical formats for analysis.
+# Map 'Yes' to 1 and 'No' to 0
+df['Asistencia'] = df['Asistencia'].map({'SI': 1, 'NO': 0})
+df['Genero']= df['Genero'].map({'M':1,'F':0})
+
+#Create  an Events column to track the number of workshops attended by each student.
+df["Events"] = df.groupby('N° de Documento').cumcount() + 1
+
+#Remove rows with invalid event counts (Events > 4) or grades with insufficient representation.
+df=df[df['Events']<=4]
+df['Events'].value_counts()
+
+df=df[df['Grado']!='8']
+df=df[df['Grado']!='9']
+df=df[df['Grado']!='8-2']
+
+```
