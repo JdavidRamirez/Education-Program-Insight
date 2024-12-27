@@ -7,7 +7,7 @@ The data collected for this project originates from an educational initiative fo
 ### Table of Contents :
 
 1. [Data Cleaning and Transformation](#data-cleaning-and-transformation)
-2. Insert data from Google Collab into SQL Server Management.
+2. [Insert data from Google Collab into SQL Server Management](#insert-data-from-google-collab-into-sql-server-management)
 3. Data visualization Poer BI.
 4. Data insights.
 
@@ -95,5 +95,20 @@ df['Events'].value_counts()
 df=df[df['Grado']!='8']
 df=df[df['Grado']!='9']
 df=df[df['Grado']!='8-2']
+
+```
+## Insert data from Google Collab into SQL Server Management
+
+```SQL
+CREATE TABLE WorkshopAttendance (
+    Fecha_evento DATE,
+    N_Documento INT,
+    Genero VARCHAR(1),
+    Fecha_Nacimiento DATE,
+    Grado VARCHAR(10),
+    Asistencia VARCHAR(2),
+    Edad INT,
+    Events INT
+);
 
 ```
